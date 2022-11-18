@@ -15,18 +15,16 @@ with st.form(key='form'):
     
     st.form_submit_button()
 
-    
-r = requests.post(
-    "https://api.deepai.org/api/text2img",
-    data={
-        'text': prompt,
-    },
-    headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
-)
-
-image_url = r.json()['output_url']
 
 if prompt:
+    r = requests.post(
+        "https://api.deepai.org/api/text2img",
+        data={
+            'text': prompt,
+        },
+        headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
+    )
+    image_url = r.json()['output_url']
     st.image(image_url)
 else:
     st.warning('Enter prompt.')
