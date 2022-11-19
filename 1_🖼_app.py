@@ -12,6 +12,8 @@ st.title('Text-to-image generator')
 
 with st.form(key='form'):
     token = st.text_input(label='Token')
+    link='(Can be found here [here](https://deepai.org/machine-learning-model/text-generator))'
+    st.markdown(link)
     prompt = st.text_area(label='Prompt')
     st.form_submit_button()
 
