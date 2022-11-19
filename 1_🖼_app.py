@@ -11,8 +11,8 @@ st.set_page_config(
 st.title('Text-to-image generator')
 
 with st.form(key='form'):
-    token = st.text_input()
-    prompt = st.text_area(label='Enter prompt')
+    token = st.text_input(label='Token')
+    prompt = st.text_area(label='Prompt')
     st.form_submit_button()
 
 if prompt and token:
